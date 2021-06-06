@@ -65,6 +65,10 @@ public class TodoController {
 	public String deleteTodo(@RequestParam int id)
 	{
 		//service.
+		if(id==1)
+		{
+			throw new RuntimeException("Something went Wrong");
+		}
 		
 		service.deleteTodo(id);
 		return "redirect:/list-todos";
